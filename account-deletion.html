@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Hesap Silme</title>
+<meta name="description" content="Paper Billionaire hesap ve veri silme talebi">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #FFFFFF; --fg: #1A1D24; --muted: #5B6472; --accent: #1456C7; --border: #E6E9EE; --card: #F7F9FC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #0E1420; --fg: #EDF1F7; --muted: #9AA6B6; --accent: #6EA2FF; --border: #232B3A; --card: #151C2B; }
+  }
+  :root[data-theme="dark"] { --bg: #0E1420; --fg: #EDF1F7; --muted: #9AA6B6; --accent: #6EA2FF; --border: #232B3A; --card: #151C2B; }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--fg); margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
+  h1 { font-size: 1.7rem; margin-bottom: 4px; }
+  .updated { color: var(--muted); font-size: 0.9rem; margin-bottom: 28px; }
+  h2 { font-size: 1.15rem; margin-top: 32px; margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  p, li { color: var(--fg); font-size: 0.97rem; }
+  ul, ol { padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin: 14px 0; }
+  a { color: var(--accent); }
+  .lang-toggle { display: flex; gap: 8px; margin-bottom: 24px; }
+  .lang-toggle button { background: var(--card); border: 1px solid var(--border); color: var(--fg); padding: 6px 14px; border-radius: 999px; cursor: pointer; font-size: 0.85rem; }
+  .lang-toggle button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  [data-lang-content] { display: none; }
+  [data-lang-content].active { display: block; }
+  .mailbtn { display: inline-block; margin-top: 8px; background: var(--accent); color: #fff; padding: 10px 18px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang-toggle">
+    <button id="btn-tr" class="active" onclick="setLang('tr')">Türkçe</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <div data-lang-content="tr" class="active">
+    <h1>Hesap ve Veri Silme — Paper Billionaire</h1>
+    <p class="updated">Son güncelleme: 29 Ekim 2026</p>
+
+    <p><strong>Paper Billionaire</strong> hesabını ve/veya hesabınla ilişkili tüm verileri
+    silmek istiyorsan, aşağıdaki adımları izleyebilirsin.</p>
+
+    <h2>Nasıl talep edilir?</h2>
+    <ol>
+      <li>Aşağıdaki e-posta adresine, hesabına bağlı e-posta adresinden (Google ile bağladıysan
+      o e-posta) "Hesap Silme Talebi" konu başlığıyla bir e-posta gönder.</li>
+      <li>Talebin, en geç <strong>30 gün</strong> içinde işleme alınır ve hesabınla ilişkili
+      tüm veriler (bulut kaydı, ilerleme verisi, satın alma geçmişi) kalıcı olarak silinir.</li>
+      <li>İşlem tamamlandığında onay e-postası gönderilir.</li>
+    </ol>
+
+    <div class="card">
+      <strong>Silme talebi için:</strong><br>
+      <a class="mailbtn" href="mailto:info@kyzvo.com?subject=Hesap%20Silme%20Talebi">info@kyzvo.com adresine e-posta gönder</a>
+    </div>
+
+    <h2>Hangi veriler silinir?</h2>
+    <ul>
+      <li>Anonim/Google hesap kimliği</li>
+      <li>Oyun ilerleme verisi (seviye, net değer, envanter, günlük/koleksiyon verisi)</li>
+      <li>Liderlik tablosu profili</li>
+      <li>Satın alma geçmişi kayıtları (yasal saklama süreleri hariç)</li>
+    </ul>
+    <p>Bazı işlem kayıtları, yasal muhasebe/vergi yükümlülükleri nedeniyle sınırlı bir süre
+    daha saklanabilir; bu süre boyunca yalnızca yasal zorunlulukla sınırlı amaçla tutulur.</p>
+
+    <h2>Hesabı silmeden kısmi veri silme</h2>
+    <p>Hesabını tamamen silmeden yalnızca belirli verilerinin (örn. bulut yedek verisi)
+    silinmesini istersen, aynı e-posta adresinden bunu da belirterek talep edebilirsin.</p>
+
+    <h2>İlgili belge</h2>
+    <p><a href="./index.html">Gizlilik Politikası</a></p>
+  </div>
+
+  <div data-lang-content="en">
+    <h1>Account and Data Deletion — Paper Billionaire</h1>
+    <p class="updated">Last updated: October 29, 2026</p>
+
+    <p>If you want to delete your <strong>Paper Billionaire</strong> account and/or all data
+    associated with it, follow the steps below.</p>
+
+    <h2>How to request deletion</h2>
+    <ol>
+      <li>Send an email to the address below, from the email linked to your account (the one
+      you used if you linked with Google), with the subject "Account Deletion Request".</li>
+      <li>Your request will be processed within <strong>30 days</strong> at the latest, and
+      all data linked to your account (cloud save, progress data, purchase history) will be
+      permanently deleted.</li>
+      <li>You will receive a confirmation email once completed.</li>
+    </ol>
+
+    <div class="card">
+      <strong>To request deletion:</strong><br>
+      <a class="mailbtn" href="mailto:info@kyzvo.com?subject=Account%20Deletion%20Request">Email info@kyzvo.com</a>
+    </div>
+
+    <h2>What data is deleted?</h2>
+    <ul>
+      <li>Anonymous/Google account identifier</li>
+      <li>Game progress data (level, net worth, inventory, journal/collection data)</li>
+      <li>Leaderboard profile</li>
+      <li>Purchase history records (except where legally required to retain)</li>
+    </ul>
+    <p>Some transaction records may be retained for a limited period for legal
+    accounting/tax obligations, used only for that limited purpose during that time.</p>
+
+    <h2>Partial data deletion without closing the account</h2>
+    <p>If you only want specific data (e.g. your cloud save) deleted without closing your
+    account entirely, you can request this from the same email address.</p>
+
+    <h2>Related document</h2>
+    <p><a href="./index.html">Privacy Policy</a></p>
+  </div>
+
+  <footer>© 2026 Paper Billionaire</footer>
+</div>
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang-content]').forEach(function (el) {
+      el.classList.toggle('active', el.getAttribute('data-lang-content') === lang);
+    });
+    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    try { localStorage.setItem('ppb-lang', lang); } catch (e) {}
+  }
+  try {
+    var saved = localStorage.getItem('ppb-lang');
+    if (saved) setLang(saved);
+  } catch (e) {}
+</script>
+</body>
+</html>
